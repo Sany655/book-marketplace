@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 143 40% 2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 143 40% 2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 143 40% 2%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 133 100% 98%;
+
+    --secondary: 152 74% 91%;
+    --secondary-foreground: 141 80% 15%;
+
+    --muted: 150 20% 96%;
+    --muted-foreground: 144 8% 46%;
+
+    --accent: 150 20% 96%;
+    --accent-foreground: 141 80% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 142 10% 90%;
+    --input: 142 10% 90%;
+    --ring: 143 40% 2%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 143 40% 2%;
+    --foreground: 133 100% 98%;
+
+    --card: 143 40% 2%;
+    --card-foreground: 133 100% 98%;
+
+    --popover: 143 40% 2%;
+    --popover-foreground: 133 100% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 133 100% 98%;
+
+    --secondary: 141 80% 15%;
+    --secondary-foreground: 133 100% 98%;
+
+    --muted: 145 30% 13%;
+    --muted-foreground: 144 8% 63%;
+
+    --accent: 145 30% 13%;
+    --accent-foreground: 133 100% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 145 30% 13%;
+    --input: 145 30% 13%;
+    --ring: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .nav-link {
+    @apply text-gray-700 hover:text-primary font-medium transition duration-200;
+  }
+
+  .active-link {
+    @apply text-primary font-semibold;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition duration-200;
+  }
+
+  .book-card {
+    @apply bg-white rounded-md overflow-hidden shadow-sm hover:shadow-md transition duration-200;
+  }
+
+  .book-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .book-title {
+    @apply text-lg font-semibold truncate;
+  }
+
+  .book-price {
+    @apply text-primary font-bold;
+  }
+
+  .book-location {
+    @apply text-sm text-gray-500;
+  }
+
+  .page-title {
+    @apply text-2xl md:text-3xl font-bold mb-4;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl font-semibold mb-3;
+  }
+
+  .hero-section {
+    background-image: url('/images/books-bg.webp');
+    @apply bg-cover bg-center py-16 px-4 md:py-20 lg:py-24 relative;
+  }
+
+  .hero-section::before {
+    content: '';
+    @apply absolute inset-0 bg-black/50;
+  }
+
+  .hero-content {
+    @apply relative z-10 text-white;
+  }
+
+  .custom-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .pattern-bg {
+    background-image: url('/images/pattern.png');
+    background-repeat: repeat;
+  }
+}
